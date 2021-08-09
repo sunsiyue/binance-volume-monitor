@@ -4,7 +4,7 @@ import { useTable, useSortBy } from 'react-table'
 const SymbolTable = () => {
 
     const data = React.useMemo(
-        () => [{ 'symbol': 'ETHBTC', '24hrVol': 13642.71639925, '30dVol': 251030.2937268701, '24hrVs30dAvg': 1.6304067764140566 }, { 'symbol': 'LTCBTC', '24hrVol': 429.0503768, '30dVol': 10849.576828020006, '24hrVs30dAvg': 1.186360676368332 }],
+        () => [{ 'symbol': 'ETHBTC', '24hrVol': 13642.71639925, '30dVol': 251030, '24hrVs30dAvg': 1.6304067764140566 }, { 'symbol': 'LTCBTC', '24hrVol': 429.0503768, '30dVol': 10849.576828020006, '24hrVs30dAvg': 1.186360676368332 }],
         []
     )
 
