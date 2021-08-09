@@ -1,5 +1,7 @@
 import Header from "./components/Header";
+import React from 'react'
 import SymbolTable from "./components/SymbolTable";
+
 
 function App() {
   return (
@@ -9,13 +11,5 @@ function App() {
     </div>
   );
 }
-
-function getData() {
-  fetch('https://api.binance.com/api/v3/exchangeInfo')
-    .then(response => response.json())
-    .then(data => console.log(data));
-}
-
-setInterval(getData, 5000);
 
 export default App;
