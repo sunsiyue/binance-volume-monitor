@@ -11,15 +11,7 @@ function App() {
 }
 
 function getData() {
-  const requestOptions = {
-    method: 'GET',
-    mode: 'cors',
-    headers: {
-      'Content-Type': 'application/json',
-      "Access-Control-Allow-Headers": "*"
-    }
-  };
-  fetch('https://api.binance.com/api/v3/exchangeInfo', requestOptions)
+  fetch('https://api.binance.com/api/v3/exchangeInfo')
     .then(response => response.json())
     .then(data => console.log(data));
 }
