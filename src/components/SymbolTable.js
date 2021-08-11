@@ -395,7 +395,9 @@ const SymbolTable = (props) => {
             var url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=' + ele['symbol'];
             fetch(url)
                 .then(response => response.json())
-                .then(data => ele['24hrVol'] = parseFloat(data['quoteVolume']));
+                .then(data => {ele['24hrVol'] = parseFloat(data['quoteVolume']);
+                ele['priceChangePercent'] = parseFloat(data['priceChangePercent']);}
+                );
         })
     }
 
@@ -469,6 +471,10 @@ const SymbolTable = (props) => {
             {
                 Header: '30dVol',
                 accessor: '30dVol',
+            },
+            {
+                Header: '24hr Price change %',
+                accessor: 'priceChangePercent',
             },
         ],
         []
