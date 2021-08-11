@@ -366,7 +366,7 @@ const SymbolTable = (props) => {
                 "SPOT"
             ],
             "24hrVs30dAvg": null,
-            "24hrVol": "147.19019665",
+            "24hrVol": 147.19019665,
             "30dVol": 172444.70233812998
         }
     ];
@@ -425,8 +425,12 @@ const SymbolTable = (props) => {
         // })
 
         for (let i=0; i<filtered.length; i++) {
-            var ratio = filtered[i]['24hrVol'] / filtered[i]['30dVol'] * 30;
-            console.log('ratio'+ratio);
+            var vol24h = filtered[i]['24hrVol'];
+            console.log('value: '+vol24h + ' type: ' + typeof(vol24h));
+            var vol30d = filtered[i]['30dVol'];
+            console.log('value: '+vol30d + ' type: ' + typeof(vol30d));
+            var ratio = (vol24h / vol30d) * 30;
+            console.log('value' + ratio + ' type: '+typeof(ratio));
             filtered[i]['24hrVs30dAvg'] = ratio;
             console.log('val'+filtered[i]['24hrVs30dAvg']);
         }
