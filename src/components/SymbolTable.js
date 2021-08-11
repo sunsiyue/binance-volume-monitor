@@ -419,7 +419,9 @@ const SymbolTable = (props) => {
     function calculate24hrVs30dAvg() {
         filtered.forEach(ele => {
             var ratio = ele['24hrVol'] / ele['30dVol'] * 30;
+            console.log(ratio);
             ele['24hrVs30dAvg'] = ratio;
+            console.log(ele['24hrVs30dAvg']);
         })
     }
 
