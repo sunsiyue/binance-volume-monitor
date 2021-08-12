@@ -414,7 +414,8 @@ const SymbolTable = (props) => {
                     );
                 })
                 .then(() => ele['30dVol'] = totalVol)
-                .then(calculate24hrVs30dAvg);
+                .then(calculate24hrVs30dAvg)
+                .then(sortByRatio);
         });
     }
 
@@ -428,13 +429,10 @@ const SymbolTable = (props) => {
 
         for (let i=0; i<filtered.length; i++) {
             var vol24h = filtered[i]['24hrVol'];
-            console.log('value: '+vol24h + ' type: ' + typeof(vol24h));
             var vol30d = filtered[i]['30dVol'];
-            console.log('value: '+vol30d + ' type: ' + typeof(vol30d));
             var ratio = (vol24h / vol30d) * 30;
-            console.log('value' + ratio + ' type: '+typeof(ratio));
             filtered[i]['24hrVs30dAvg'] = ratio;
-            console.log('val'+filtered[i]['24hrVs30dAvg']);
+            console.log('val 24hrVs30dAvg: '+filtered[i]['24hrVs30dAvg']);
         }
     }
 
@@ -449,7 +447,6 @@ const SymbolTable = (props) => {
             .then(removeNonBtcPair)
             .then(get24hrVol)
             .then(get30dVol)
-            .then(sortByRatio)
             .then(setData(filtered))
             .then(console.log(filtered));
     }
