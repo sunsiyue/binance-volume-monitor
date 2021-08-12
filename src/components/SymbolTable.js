@@ -412,7 +412,8 @@ const SymbolTable = (props) => {
                         totalVol += parseFloat(interval[7])
                     );
                 })
-                .then(() => ele['30dVol'] = totalVol);
+                .then(() => ele['30dVol'] = totalVol)
+                .then(calculate24hrVs30dAvg);
         });
     }
 
@@ -447,7 +448,6 @@ const SymbolTable = (props) => {
             .then(removeNonBtcPair)
             .then(get24hrVol)
             .then(get30dVol)
-            .then(calculate24hrVs30dAvg)
             .then(sortByRatio)
             .then(setData(filtered))
             .then(console.log(filtered));
