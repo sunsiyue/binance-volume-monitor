@@ -2,8 +2,9 @@ import React, { useEffect } from 'react'
 import { useTable, useSortBy } from 'react-table'
 
 const SymbolTable = (props) => {
-    let debug = true;
-    let refreshInterval = 10000;
+    let debug = false;
+    let refreshInterval = 300000;
+    
     var allTickers = [{ 'symbol': 'ETHBTC' }, { 'symbol': 'LTCBTC' }];
     var debugData = [
         {
