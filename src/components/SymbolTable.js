@@ -397,7 +397,8 @@ const SymbolTable = (props) => {
             fetch(url)
                 .then(response => response.json())
                 .then(data => {ele['24hrVol'] = parseFloat(data['quoteVolume']);
-                ele['priceChangePercent'] = parseFloat(data['priceChangePercent']);}
+                ele['priceChangePercent'] = parseFloat(data['priceChangePercent']);
+                ele['lastPrice'] = parseFloat(data['lastPrice']);}
                 );
         })
     }
@@ -482,6 +483,10 @@ const SymbolTable = (props) => {
             {
                 Header: '30dVol',
                 accessor: '30dVol',
+            },
+            {
+                Header: 'Last Price',
+                accessor: 'lastPrice',
             },
             {
                 Header: '24hr Price change %',
