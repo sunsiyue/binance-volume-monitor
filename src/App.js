@@ -8,7 +8,10 @@ function App() {
     <div className="App">   
       <Header></Header>
       <div class="container">
-        <p class="mb-1">Instruction: Leave the page open for 5min, your data will appear. Sorry I am too poor so there is no backend to this tool, it runs on your browser.</p>
+        <p class="mb-1">Instruction:</p>
+        <p>1. Leave the page open for 5min, your data will appear. Sorry I am too poor to buy a backend server, it runs on your browser.</p>
+        <p>2. Coins are ranked by 24hrVol vs. 30dAvgVol.</p>
+        <p>3. If you do not understand #2, get the hell out of here.</p>
       </div>
       <div class="album py-5 bg-light">
         <div class="container">
