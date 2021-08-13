@@ -473,7 +473,7 @@ const SymbolTable = (props) => {
                 accessor: 'symbol',
             },
             {
-                Header: '24hrVol vs. 30dAvgVol',
+                Header: '24hrVol / 30dAvgVol',
                 accessor: '24hrVs30dAvg',
             },
             {
