@@ -396,8 +396,8 @@ const SymbolTable = (props) => {
             var url = 'https://api.binance.com/api/v3/ticker/24hr?symbol=' + ele['symbol'];
             fetch(url)
                 .then(response => response.json())
-                .then(data => {ele['24hrVol'] = parseFloat(data['quoteVolume']);
-                ele['priceChangePercent'] = parseFloat(data['priceChangePercent']);
+                .then(data => {ele['24hrVol'] = parseFloat(data['quoteVolume']).toFixed(2);
+                ele['priceChangePercent'] = parseFloat(data['priceChangePercent']).toFixed(2);
                 ele['lastPrice'] = parseFloat(data['lastPrice']);}
                 );
         })
@@ -414,7 +414,7 @@ const SymbolTable = (props) => {
                         totalVol += parseFloat(interval[7])
                     );
                 })
-                .then(() => ele['30dVol'] = totalVol)
+                .then(() => ele['30dVol'] = totalVol.toFixed(2))
                 .then(calculate24hrVs30dAvg)
                 .then(sortByRatio);
         });
@@ -432,7 +432,7 @@ const SymbolTable = (props) => {
             var vol24h = filtered[i]['24hrVol'];
             var vol30d = filtered[i]['30dVol'];
             var ratio = (vol24h / vol30d) * 30;
-            filtered[i]['24hrVs30dAvg'] = ratio;
+            filtered[i]['24hrVs30dAvg'] = ratio.toFixed(2);
             console.log('val 24hrVs30dAvg: '+filtered[i]['24hrVs30dAvg']);
         }
     }
