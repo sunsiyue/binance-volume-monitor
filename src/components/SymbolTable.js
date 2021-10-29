@@ -3,7 +3,7 @@ import { useTable, useSortBy } from 'react-table'
 
 const SymbolTable = (props) => {
     let debug = false;
-    let refreshInterval = 60000;
+    let refreshInterval = 90000;
     
     var allTickers = [{ 'symbol': 'ETHBTC' }, { 'symbol': 'LTCBTC' }];
     var debugData = [
